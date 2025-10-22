@@ -1,0 +1,71 @@
+.todo-body {
+  width: 100%;
+  padding: var(--space-large);
+  border: var(--border-width-med) solid var(--dom);
+  border-radius: var(--border-radius-med);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.input-wrapper {
+  width: 100%;
+  padding: var(--space-med);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: var(--input-height);
+  height: var(--input-height);
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width-med) solid var(--accent);
+  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+
+  img {
+    height: 60%;
+    width: 60%;
+    filter: invert(1) hue-rotate(180deg) saturate(2);
+  }
+}
+
+#new-task {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--input-height);
+  outline: none;
+  background-color: transparent;
+  border-left: 0;
+  border-width: var(--border-width-med);
+  border-color: var(--dom);
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+  transition: var(--trans-short);
+  padding: var(--space-large);
+
+  &:focus {
+    border-color: var(--accent);
+    transition: var(--trans-short);
+  }
+
+  &::placeholder {
+    color: var(--dom);
+  }
+
+  &.error {
+    border-color: var(--danger);
+
+    &::placeholder {
+      color: var(--danger);
+    }
+  }
+}
+
+#add-todo {
+  width: 100%;
+}

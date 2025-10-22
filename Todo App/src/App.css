@@ -1,0 +1,120 @@
+:root {
+  --background:   hsl(270, 80%, 10%);
+  --text:         hsl(270, 100%, 95%);
+  --text-muted:   hsl(270, 100%, 50%);
+  
+  --dom:          hsl(270, 100%, 50%);
+  --dom-light:    hsl(270, 100%, 70%);
+  --dom-hover:    hsl(270, 100%, 25%);
+  
+  --accent:       hsl(180, 100%, 50%);
+  --accent-light: hsl(180, 100%, 70%);
+  --accent-hover: hsl(180, 100%, 30%);
+  
+  --good:         hsl(120, 100%, 45%);
+  --good-light:   hsl(120, 100%, 70%);
+  --good-hover:   hsl(120, 100%, 35%);
+  
+  --note:         hsl(60, 100%, 60%);
+  --note-light:   hsl(60, 100%, 70%);
+  --note-hover:   hsl(60, 100%, 40%);
+  
+  --danger:       hsl(0, 100%, 55%);
+  --danger-light: hsl(0, 100%, 70%);
+  --danger-hover: hsl(0, 100%, 40%);
+
+  --input-height: 48px;
+
+  --border-width-small:     2px;
+  --border-width-med:       4px;
+  --border-width-large:     8px;
+  --border-radius-small:    8px;
+  --border-radius-med:     16px;
+  --border-radius-large:   32px;
+
+  --space-small:  4px;
+  --space-med:    8px;
+  --space-large: 24px;
+
+  --trans-short: 0.25s;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width-med) solid var(--dom);
+  border-radius: var(--border-radius-large);
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.title {
+  margin: var(--space-large) 0 0 0;
+}
+
+.section {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  --button-color:       var(--accent);
+  --button-color-hover: var(--accent-hover);
+
+  color: var(--button-color);
+  background-color: transparent;
+  border: var( --border-width-med) solid var(--button-color);
+  transition: var(--trans-short);
+
+  &:hover {
+    color: var(--background);
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    transition: var(--trans-short);
+  }
+
+  &:active {
+    color: var(--background);
+    background-color: var(--button-color-hover);
+    border-color: var(--button-color-hover);
+    transition: var(--trans-short);
+  }
+
+  &.button-danger {
+    --button-color:       var(--danger);
+    --button-color-hover: var(--danger-hover);
+  }
+
+  &.button-edit {
+    --button-color:       var(--note);
+    --button-color-hover: var(--note-hover);
+  }
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-med);
+  margin: var(--space-large);
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
